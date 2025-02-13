@@ -1,0 +1,61 @@
+
+.header {
+    box-shadow: 1px 2px 6px 8px solid black;
+    background-color: rgb(238, 242, 246);
+  }
+  
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+  }
+  
+  .title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: rgb(78, 76, 76);
+    margin-left: 20px;
+  }
+  
+  .nav {
+    display: none;
+  }
+  
+  .nav .link {
+    color: rgb(78, 76, 76);
+    margin-right: 16px;
+  }
+  
+  .create-btn {
+    background-color: rgb(12, 101, 201);
+    height: 40px;
+    font-size: 15px;
+    border-radius: 10px;
+    color: rgb(236, 238, 239);
+    padding: 10px;
+    font-weight: bold;
+    border: none;
+    margin-right: 50px;
+  }
+  
+  .menu-toggle-container {
+    display: flex;
+  }
+  
+  .menu-toggle .icon {
+    height: 24px;
+    width: 24px;
+  }
+  
+  /* Media query for larger screens */
+  @media (min-width: 768px) {
+    .nav {
+      display: flex;
+    }
+    .menu-toggle-container {
+      display: none;
+    }
+  }
+  
