@@ -35,7 +35,6 @@ export default Header*/
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { openModal } from '../../redux/slices/modalSlice';
-import { Link } from 'react-router-dom';
 import './index.css';
 
 function Header() {

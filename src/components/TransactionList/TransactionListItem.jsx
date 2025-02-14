@@ -1,3 +1,4 @@
+
 import React from 'react';
 import './index.css';
 import { ImBin } from "react-icons/im";
@@ -5,7 +6,6 @@ import { FaRegEdit } from "react-icons/fa";
 
 function TransactionListItem(props) {
   const { handleDelete, handleEdit, transaction } = props;
-  console.log(handleDelete);
 
   return (
     <li key={transaction.id} className="transaction-item">
@@ -22,7 +22,6 @@ function TransactionListItem(props) {
           <p className='currency-p'>{transaction.originalCurrency}</p>
         </div>
       </div>
-
       <div className='list-right-con'>
         <button className='icons-btn' onClick={() => handleDelete(transaction.id)}>
           <ImBin className='list-icon' />

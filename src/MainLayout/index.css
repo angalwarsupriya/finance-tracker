@@ -1,0 +1,18 @@
+.main-layout {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-color: whitesmoke;
+  }
+  
+  .content {
+    display: flex;
+    flex: 1;
+    height: 90vh;
+  }
+  
+  .main-content {
+    flex: 1;
+    height: 90vh;
+  }
+  

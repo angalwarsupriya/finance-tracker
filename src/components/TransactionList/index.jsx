@@ -1,3 +1,4 @@
+
 import React from 'react';
 import './index.css';
 import { useSelector, useDispatch } from 'react-redux';
@@ -6,7 +7,8 @@ import TransactionListItem from './TransactionListItem';
 import EmptyListView from './EmptyListView';
 
 import Header from '../Header';
-import SideBarCompo from '../SideBarCompo'
+import SideBarCompo from '../SideBarCompo';
+
 const TransactionList = () => {
   const transactions = useSelector((state) => state.transactions);
   const dispatch = useDispatch();
@@ -21,11 +23,10 @@ const TransactionList = () => {
     dispatch(updateTransaction(updatedTransaction));
   };
 
-  
   const displayListView = () => {
     if (transactions.length > 0) {
       return (
-        <ul>
+        <ul className="transaction-list">
           {transactions.map(transaction => (
             <TransactionListItem
               key={transaction.id}
@@ -43,21 +44,16 @@ const TransactionList = () => {
 
   return (
     <div className='transaction-bg-con'>
-        <Header/>
-        <div className='trasaction-row'>
-          <SideBarCompo/>
-          <div className='transaction-con'>
-            <h2 className="transactions-h">Transaction List</h2>
-            {displayListView()} 
-          </div>
+      <Header/>
+      <div className='trasaction-row'>
+        <SideBarCompo/>
+        <div className='transaction-con'>
+          <h2 className="transactions-h">Transaction List</h2>
+          {displayListView()} 
         </div>
+      </div>
     </div>
   );
 };
 
 export default TransactionList;
-/*
- <section className="transaction-list">
-      <h2 className="transactions-h">Transaction List</h2>
-      {displayListView()}     
-    </section>*/
