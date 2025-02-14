@@ -7,3 +7,36 @@
 label{
     font-size: 20px;
 }
+.con-row{
+    width: 90%;
+}
+
+.usd-text{
+    font-size: 16px;
+    font-weight: bold;
+    margin: 0px;
+    color: rgb(71, 72, 72);
+    letter-spacing: 1px;
+}
+.selectedtext{
+    margin-top: 5px;
+    letter-spacing: 1px;
+    font-size: 16px;
+    font-weight: bold;
+    color: rgb(71, 72, 72);
+}
+.round-con{
+    height: 55px;
+    width: 63px;
+    background-color: rgb(7, 37, 236);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 30px;
+}
+span{
+    color: rgb(5, 45, 127);
+    font-size: 17px;
+}

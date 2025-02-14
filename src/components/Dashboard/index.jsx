@@ -14,7 +14,7 @@ import DisplayResults from './DisplayResults'
 import DashboardSummary from '../DashboardSummary'
 function Dashboard() {
     // state for manage currency 
-    const [selectedCurrency, setSelectedCurrency] = useState('USD');
+    
     // logic of all data 
     const { exchangeRatesState, errorMsg } = useExchangeRates();
     const transactions = useSelector((state) => state.transactions);
@@ -61,7 +61,6 @@ function Dashboard() {
             totalIncome={totalIncome}
             totalExpenses={totalExpenses}
             totalSavings={totalSavings}
-            selectedCurrency={selectedCurrency}
             exchangeRatesState={exchangeRatesState}
           />
           <DashboardSummary
