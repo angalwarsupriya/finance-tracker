@@ -1,6 +1,5 @@
 import React from 'react'
 import './index.css'
-import { useState } from 'react'
 //imporing components
 import Header from '../Header'
 import SideBarCompo from '../SideBarCompo'
@@ -18,7 +17,7 @@ function Dashboard() {
     // logic of all data 
     const { exchangeRatesState, errorMsg } = useExchangeRates();
     const transactions = useSelector((state) => state.transactions);
-    console.log(exchangeRatesState)
+    console.log(transactions)
   const totalIncome = transactions.filter(transaction => transaction.type === 'income')
     .reduce((sum, transaction) => sum + transaction.amount, 0);
   const totalExpenses = transactions.filter(transaction => transaction.type === 'expense')

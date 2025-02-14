@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
-
+import { updateMonthlySpent } from './budgetGoalsSlice';
 const transactionsSlice = createSlice({
   name: 'transactions',
   initialState :[
@@ -125,10 +125,38 @@ const transactionsSlice = createSlice({
       category: 'health',
       baseCurrency: 'USD',
     },
-  ],  
+    {
+      id: 13,
+      description: 'Grocery shopping',
+      amount: 800,
+      originalAmount: 800,
+      originalCurrency: 'USD',
+      type: 'expense',
+      category: 'food',
+      baseCurrency: 'USD',
+      date: '2025-02-05',
+    },
+    {
+      id: 14,
+      description: 'Monthly Rent',
+      amount: 1200,
+      originalAmount: 1200,
+      originalCurrency: 'USD',
+      type: 'expense',
+      category: 'housing',
+      baseCurrency: 'USD',
+      date: '2023-09-01',
+    },
+  ]
+    ,
   reducers: {
     addTransaction: (state, action) => {
-      state.push(action.payload);
+      const newTransaction = {
+        ...action.payload,
+        date: new Date().toISOString().split('T')[0],
+        monthYear: new Date().toISOString().split('T')[0].slice(0, 7), // Add month and year
+      };
+      state.unshift(newTransaction);
     },
     deleteTransaction: (state, action) => {
       return state.filter(transaction => transaction.id !== action.payload);

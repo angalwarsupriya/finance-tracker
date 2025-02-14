@@ -1,12 +1,13 @@
-import React, { useState } from 'react';
+
+import React, { useState,useEffect } from 'react';
 import './index.css';
 // redux functions
 import { useDispatch, useSelector } from 'react-redux';
-//importing modal redux actions
+// importing modal redux actions
 import { addTransaction } from '../../redux/slices/transactionSlices';
 import { closeModal } from '../../redux/slices/modalSlice';
 
-//importing exchangeRates function 
+// importing exchangeRates function 
 import useExchangeRates from '../../redux/useExchangeRates';
 
 const incomeSources = [
@@ -14,8 +15,8 @@ const incomeSources = [
 ];
 
 const expenseCategories = [
-  'food', 'transport', 'entertainment', 'utilities', 'healthcare',
-  'shopping', 'education', 'other',
+  'food', 'transport', 'entertainment', 'utilities', 'health',
+  'shopping','housing', 'education', 'other',
 ];
 
 const TransactionForm = () => {
@@ -23,13 +24,22 @@ const TransactionForm = () => {
   const dispatch = useDispatch();
   const { exchangeRatesState, errorMsg } = useExchangeRates();
   const showModal = useSelector((state) => state.modal.showModal);
-  
+  useEffect(() => {
+    // Set default category based on type
+    if (formData.type === 'income' && formData.category === '') {
+      setFormData({ ...formData, category: incomeSources[0] });
+    } else if (formData.type === 'expense' && formData.category === '') {
+      setFormData({ ...formData, category: expenseCategories[0] });
+    }
+  }, [formData.type]);
   const handleSubmit = (e) => {
     e.preventDefault();
+    console.log(formData,';;;;;;')
     if (exchangeRatesState) {
       const baseCurrency = 'USD';
       const rate = exchangeRatesState.conversion_rates[formData.currency];
       const amountInBaseCurrency = formData.amount / rate;
+      const monthYear = new Date().toISOString().split('T')[0].slice(0, 7);
 
       dispatch(addTransaction({
         ...formData,
@@ -38,6 +48,7 @@ const TransactionForm = () => {
         originalCurrency: formData.currency,
         id: Date.now(),
         baseCurrency,
+        monthYear, // Include month and year
       }));
       setFormData({ description: '', amount: '', category: '', type: 'income', currency: 'USD' });
       dispatch(closeModal());
@@ -100,14 +111,14 @@ const TransactionForm = () => {
             </select>
             {formData.type !== 'saving' && (
               <select
-                value={formData.category}
-                onChange={(e) => setFormData({ ...formData, category: e.target.value })}
-                className="block w-full p-2 border rounded"
-              >
-                {getCategoryOptions().map((category) => (
-                  <option key={category} value={category}>{category}</option>
-                ))}
-              </select>
+               value={formData.category}
+               onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+               className="block w-full p-2 border rounded"
+             >
+               {getCategoryOptions().map((category) => (
+                 <option key={category} value={category}>{category}</option>
+               ))}
+             </select>
             )}
             <select
               value={formData.currency}
@@ -118,6 +129,7 @@ const TransactionForm = () => {
                 <option key={currency} value={currency}>{currency}</option>
               ))}
             </select>
+            
             <button type="submit" className="submit-btn">Add Transaction</button>
           </form>
           <button onClick={() => dispatch(closeModal())} className="close-modal">Close</button>

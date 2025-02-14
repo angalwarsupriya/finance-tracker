@@ -1,0 +1,120 @@
+
+.budget-bg-con{
+  height: 100vh;
+  width: 100vw;
+}
+.budget-row{
+  height: 90vh;
+  width: 100vw;
+  display: flex;
+}
+.budget-con{
+  min-height: 100%;
+  width: 80%;
+  padding: 20px;
+  overflow-y: scroll;
+}
+/*lll*/
+
+.img{
+  height: 100%;
+  width: 100%;
+}
+.form-row{
+  display: flex;
+  justify-content: space-around;
+  height: 40%;
+  width: 100%;
+}
+.gols-img-con{
+  width: 40%;
+  height: 450px;
+  padding-top: 0px;
+}
+  .budget-goal-form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  
+  .budget-goal-form input {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+
+  }
+  
+  .budget-goal-form button {
+    padding: 10px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .month-budget-goals {
+    margin-top: 60px;
+  }
+  
+  .month-budget-goals h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .delete-month-btn {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+  }
+  
+  .budget-goals-list {
+    list-style: none;
+    padding: 0;
+
+  }
+  
+  .budget-goal-item {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius:2px;
+    margin-top: 10px;
+  }
+ .span1{
+  font-size: 20px;
+  margin-right: 10px;
+  color: blueviolet;
+  font-weight: bold;
+  margin-right: 20px;
+ }
+ .span{
+   color: rgb(100, 98, 98);
+ }
+ .dlt-btn{
+  font-size: 11px;
+  margin-left: 20px;
+  background-color: #f44336;
+  color: #fff9f9;
+  border: none;
+  padding: 10px;
+  border-radius: 6px;
+ }
+
+  @media (max-width: 768px) {
+    .budget-row{
+      width: 90vw;
+      display: flex;
+      justify-content: center;
+
+    }
+    .budget-con{
+      width: 100%;
+    }
+  }
+  

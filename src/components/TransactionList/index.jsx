@@ -12,7 +12,6 @@ import SideBarCompo from '../SideBarCompo';
 const TransactionList = () => {
   const transactions = useSelector((state) => state.transactions);
   const dispatch = useDispatch();
-  console.log(transactions);
 
   const handleDelete = (id) => {
     dispatch(deleteTransaction(id));

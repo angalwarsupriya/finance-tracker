@@ -6,6 +6,8 @@ import TransactionList from './components/TransactionList';
 import Dashboard from './components/Dashboard';
 import TransactionForm from './components/TransactionForm';
 import MainLayout from './MainLayout';
+import BudgetGoals from './components/BudgetGoals';
+import ErrorBoundary from './components/ErrorBoundary';
 
 
 const App = () => {
@@ -15,7 +17,12 @@ const App = () => {
         <TransactionForm/>
       <Routes>
         <Route path='/' element={<Dashboard/>}/>
-        <Route path="/transactions" element={<TransactionList/>} />
+          <Route path="/transactions" element={<TransactionList />} />
+          <Route path='/budget' element={
+             <ErrorBoundary>
+             <BudgetGoals />
+           </ErrorBoundary>
+          }/>
       </Routes>
       </MainLayout>
     </Router>
