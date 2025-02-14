@@ -10,12 +10,12 @@ import { closeModal } from '../../redux/slices/modalSlice';
 import useExchangeRates from '../../redux/useExchangeRates';
 
 const incomeSources = [
-  'Salary', 'Freelance', 'Investment', 'Gift', 'Other',
+  'salary', 'freelance', 'investment', 'gift', 'other',
 ];
 
 const expenseCategories = [
-  'Food', 'Transport', 'Entertainment', 'Utilities', 'Healthcare',
-  'Shopping', 'Education', 'Other',
+  'food', 'transport', 'entertainment', 'utilities', 'healthcare',
+  'shopping', 'education', 'other',
 ];
 
 const TransactionForm = () => {
@@ -75,6 +75,9 @@ const TransactionForm = () => {
               value={formData.description}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
               className="block w-full p-2 border rounded"
+              required
+              minLength="5"
+              maxLength='18'
             />
             <input
               type="number"
@@ -82,11 +85,14 @@ const TransactionForm = () => {
               value={formData.amount}
               onChange={(e) => setFormData({ ...formData, amount: +e.target.value })}
               className="block w-full p-2 border rounded"
+              min={1}
+              required
             />
             <select
               value={formData.type}
               onChange={(e) => setFormData({ ...formData, type: e.target.value })}
               className="block w-full p-2 border rounded"
+              required
             >
               <option value="income">Income</option>
               <option value="expense">Expense</option>

@@ -3,7 +3,7 @@ import './index.css'
 
 import { PieChart, Pie, Cell, Tooltip, Legend, BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
 
-const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#AF19FF', '#FF4561', '#FFC260', '#72BF44', '#F28B28'];
+const COLORS = [ '#FF4561', '#FFC260', '#72BF44', '#F28B28', '#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#AF19FF', ];
 
 const DashboardSummary = ({ incomeData, expenseData }) => (
 
@@ -17,7 +17,7 @@ const DashboardSummary = ({ incomeData, expenseData }) => (
           <YAxis />
           <Tooltip />
           <Legend />
-          <Bar dataKey="value" fill="#2f65ee" />
+          <Bar dataKey="value" fill="blueviolet" />
         </BarChart>
       </ResponsiveContainer>
     </div>

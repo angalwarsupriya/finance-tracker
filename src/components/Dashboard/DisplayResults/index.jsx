@@ -16,7 +16,8 @@ const DisplayResults = ({ totalIncome, totalExpenses, totalSavings, exchangeRate
 
   return (
     <>
-      <div style={{marginBottom:"20px", margin:'20px'}}>
+      <div style={{ marginBottom: "20px", margin: '20px' }}>
+        <h2 className='dash-h'>Dashboard</h2>
         <label htmlFor="currency" className="block text-lg mb-2">Select Currency:</label>
         <select
           id="currency"

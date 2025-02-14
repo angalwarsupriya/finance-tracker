@@ -1,9 +1,9 @@
 
 .side-bar-bg-con {
         height: 90vh;
-        width: 20vw;
+        width: 18vw;
         border: 0.5px solid rgb(182, 180, 180);
-        background-color: rgb(238, 242, 246);
+        background-color: rgb(255, 255, 255);
         padding: 20px;
       }
       .nav-con {
@@ -12,7 +12,7 @@
         padding-top: 20px;
       }
       .side-list-con {
-        background-color: rgb(215, 208, 244);
+        background-color: rgb(255, 255, 255);
         width: 100%;
         font-weight: bold;
         height: 9%;
@@ -20,17 +20,22 @@
         border-radius: 5px;
         display: flex;
         align-items: center;
-        justify-content: center;
         font-size: 15px;
         font-family: 'Roboto', sans-serif;
-        color: rgb(0, 72, 255);
-      }
-      
+        padding-left: 10px;
+      }  
       .link {
-        color: rgb(78, 76, 76);
         text-decoration: none;
       }
-      
+      .ii{
+        margin-right: 10px;
+        margin-left: 0px;
+      }
+      .side-icon{
+
+        font-size: 30px;
+        margin-right: 10px;
+      }
       /* Hide the sidebar on smaller screens */
       
       /* Show the sidebar on medium and larger screens */

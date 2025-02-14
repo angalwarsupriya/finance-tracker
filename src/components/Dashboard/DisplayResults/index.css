@@ -10,7 +10,10 @@ label{
 .con-row{
     width: 90%;
 }
-
+.dash-h{
+    font-size: 30px;
+    color: blueviolet;
+}
 .usd-text{
     font-size: 16px;
     font-weight: bold;
@@ -28,7 +31,7 @@ label{
 .round-con{
     height: 55px;
     width: 63px;
-    background-color: rgb(7, 37, 236);
+    background-color: rgb(99, 118, 241);
     border-radius: 50%;
     display: flex;
     align-items: center;
